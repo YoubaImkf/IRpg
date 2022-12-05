@@ -1,4 +1,5 @@
 import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,6 +23,11 @@ public class UI implements ActionListener {
         if(gamePanel.gameState == gamePanel.titleState){
             drawTitleScreen();
         }
+        //Title state
+        if(gamePanel.gameState == gamePanel.startState){
+            drawStartScreen();
+        }
+
     }
 
 
@@ -48,6 +54,8 @@ public class UI implements ActionListener {
             x = gamePanel.screenWidth / 2 - (gamePanel.titleState /2) ;
             graphics2D.drawImage(image,x, y, gamePanel.tileSize * 3,gamePanel.tileSize * 3,null);
 
+
+
             // MENU
             graphics2D.setFont(graphics2D.getFont().deriveFont(Font.BOLD,45F));
             text = "PLAY";
@@ -70,6 +78,24 @@ public class UI implements ActionListener {
             e.printStackTrace();
         }
     }
+
+    private void drawStartScreen() {
+//        // TEXT
+//        graphics2D.setColor(Color.ORANGE);
+//        graphics2D.fillRect(0,0,gamePanel.screenWidth, gamePanel.screenHeight);
+//        graphics2D.setFont(graphics2D.getFont().deriveFont(Font.BOLD,80F));
+
+        String text = "Start";
+        int x = getCenterScreen(text);
+        int y = gamePanel.tileSize * 2;
+
+        graphics2D.setColor(Color.blue);
+        graphics2D.drawString(text, x+5, y+5);
+
+        graphics2D.setColor(Color.white);
+        graphics2D.drawString(text, x, y);
+    }
+
 
     private int getCenterScreen(String text){
         int lenght = (int)graphics2D.getFontMetrics().getStringBounds(text,graphics2D).getWidth();

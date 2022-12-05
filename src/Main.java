@@ -1,5 +1,5 @@
 import javax.swing.*;
-import java.awt.*;
+
 
 public class Main {
 
@@ -14,8 +14,6 @@ public class Main {
 
         // center the window
 
-
-
 //        JPanel titleNamePanel = new JPanel();
 //        titleNamePanel.setBounds(100,100,600,150);
 //        titleNamePanel.setBackground(Color.orange);
@@ -27,6 +25,8 @@ public class Main {
 //
 ////        gamePanel.add(titleNameLabel);
 //        gamePanel.add(titleNamePanel);
+//        JButton startButton = new JButton("Start");
+//        gamePanel.add(startButton );
 
         window.add(gamePanel);
         window.pack();

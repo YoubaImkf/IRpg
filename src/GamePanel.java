@@ -14,7 +14,8 @@ public class GamePanel extends JPanel implements Runnable{
 
     //State of the Game
     public int gameState; // state of the game
-    public int titleState = 0;
+    public final int titleState = 0;
+    public final int startState = 1;
 
     private Thread gameThread ; // Object Thread to repaint screen each 60
     public KeyHandler keyHandler =  new KeyHandler(this); // Object that store key press

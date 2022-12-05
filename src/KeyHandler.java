@@ -31,10 +31,14 @@ public class KeyHandler implements KeyListener {
                     gamePanel.ui.commandNum = 0;
                 }
             }
+
+            // interact
             if (keyCode == KeyEvent.VK_ENTER){
                 if(gamePanel.ui.commandNum == 0){
-                    System.out.println("game is playing");
-                } else if(gamePanel.ui.commandNum == 1){ System.exit(0);}
+//                    System.out.println("game is playing");
+                    gamePanel.gameState = gamePanel.startState;
+                }
+                if(gamePanel.ui.commandNum == 1){ System.exit(0);}
             }
 
 
